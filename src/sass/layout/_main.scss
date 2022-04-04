@@ -1,0 +1,25 @@
+.main {
+  margin: 4rem 0;
+}
+
+.row {
+  display: grid;
+}
+
+.virtual {
+  background-color: var(--white);
+  margin-bottom: 1.6rem;
+
+  &__img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__history {
+    & > p {
+      color: var(--darkGray);
+      font-size: 1.6rem;
+    }
+  }
+}
