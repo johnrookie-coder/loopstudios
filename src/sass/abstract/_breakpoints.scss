@@ -1,0 +1,41 @@
+@media (max-width: 99.2em) {
+  .header {
+    background: url("/images/desktop/image-hero.jpg") no-repeat top center/cover;
+
+    &__banner {
+      max-width: 45%;
+    }
+  }
+
+  .navigation {
+    // Links
+    .hamburger__menu {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      gap: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 50em) {
+  .header {
+    background: url("/images/mobile/image-hero.jpg") no-repeat top center/cover;
+
+    &__banner {
+      max-width: 100%;
+    }
+  }
+
+  .navigation {
+    .hamburger__menu {
+      display: inline-block;
+    }
+
+    &__list {
+      display: none;
+    }
+  }
+}
