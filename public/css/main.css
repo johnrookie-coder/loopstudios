@@ -71,6 +71,31 @@
     display: block;
     margin: 0;
   }
+
+  .footer .row {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+  }
+  .footer__navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer__list {
+    display: flex;
+    gap: 1.6rem;
+  }
+  .footer__social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .social__list {
+    display: flex;
+    gap: 1.6rem;
+  }
 }
 @media (max-width: 50em) {
   .header {
@@ -154,6 +179,34 @@
   .btn__container.desktop {
     display: none;
   }
+
+  .footer .row {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+  .footer__navigation {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer__list {
+    flex-direction: column;
+  }
+  .footer__social {
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .social {
+    text-align: center;
+    width: 100%;
+  }
+  .social__list {
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+  }
 }
 *,
 *::before,
@@ -194,6 +247,10 @@ body {
 
 .row {
   display: grid;
+}
+
+.w-25 {
+  width: 25%;
 }
 
 .main__heading {
@@ -309,6 +366,7 @@ body {
 }
 .image__item:hover figcaption {
   color: var(--primaryText);
+  font-weight: 400;
 }
 .image__feature {
   object-fit: cover;
@@ -324,6 +382,42 @@ body {
   z-index: 100;
 }
 
-.w-25 {
-  width: 25%;
+.footer {
+  background-color: var(--primaryText);
+  color: var(--white);
+  padding: 4rem 0;
+}
+.footer__item {
+  list-style: none;
+}
+.footer__link {
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding-bottom: 8px;
+}
+.footer__link:hover {
+  border-bottom: 2px solid var(--white);
+}
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.8rem;
+}
+.footer .social__list {
+  display: flex;
+  gap: 1.6rem;
+}
+.footer .social__item {
+  list-style: none;
+}
+.footer .social__link {
+  padding-bottom: 8px;
+}
+.footer .social__link:hover {
+  border-bottom: 2px solid var(--white);
 }

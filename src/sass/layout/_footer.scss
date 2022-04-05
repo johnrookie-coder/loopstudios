@@ -1,0 +1,50 @@
+.footer {
+  background-color: var(--primaryText);
+  color: var(--white);
+  padding: 4rem 0;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding-bottom: 8px;
+
+    &:hover {
+      border-bottom: 2px solid var(--white);
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    font-size: 1.8rem;
+  }
+
+  .social {
+    &__list {
+      display: flex;
+      gap: 1.6rem;
+    }
+
+    &__item {
+      list-style: none;
+    }
+
+    &__link {
+      padding-bottom: 8px;
+
+      &:hover {
+        border-bottom: 2px solid var(--white);
+      }
+    }
+  }
+}
