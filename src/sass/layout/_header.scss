@@ -27,27 +27,3 @@
     text-decoration: none;
   }
 }
-
-// Utilities
-.container {
-  margin: 0 auto;
-  height: 100%;
-  width: 90%;
-}
-
-.main__heading {
-  color: var(--white);
-  font-size: clamp(3.6rem, 4.5vw, 5.4rem);
-  font-weight: 300;
-  line-height: 1.2;
-  text-transform: uppercase;
-  max-width: 80%;
-}
-
-.heading__secondary {
-  font-family: inherit;
-  // font-size: 3.6rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  // text-align: center;
-}

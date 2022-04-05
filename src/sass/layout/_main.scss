@@ -1,9 +1,5 @@
 .main {
-  margin: 4rem 0;
-}
-
-.row {
-  display: grid;
+  margin: 8rem 0;
 }
 
 .virtual {
@@ -22,4 +18,65 @@
       font-size: 1.6rem;
     }
   }
+}
+
+// Image Gallery
+.image {
+  margin: 8rem 0;
+
+  &__gallery {
+    // border: 1px solid #000;
+    display: grid;
+    gap: 2.4rem;
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image: linear-gradient(to top, var(--gray), var(--white));
+
+      mix-blend-mode: multiply;
+    }
+
+    & > img {
+      transition: transform 650ms ease-in-out, opacity 550ms ease-in-out 100ms,
+        color 300ms ease-in-out;
+    }
+
+    &:hover > img {
+      opacity: 0.35;
+      transform: scale(1.15);
+    }
+
+    &:hover figcaption {
+      color: var(--primaryText);
+    }
+  }
+
+  &__feature {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__desc {
+    position: absolute;
+
+    color: var(--white);
+    font-family: inherit;
+    font-weight: 300;
+    text-transform: uppercase;
+    z-index: 100;
+  }
+}
+
+.w-25 {
+  width: 25%;
 }

@@ -1,6 +1,6 @@
 @media (max-width: 99.2em) {
   .header {
-    background: url("/images/desktop/image-hero.jpg") no-repeat top center/cover;
+    background: url("../images/desktop/image-hero.jpg") no-repeat top center/cover;
   }
   .header__banner {
     max-width: 45%;
@@ -23,7 +23,7 @@
     font-size: 4.8rem;
   }
 
-  .virtual {
+  .virtual__reality {
     grid-row: 1/span 1;
     grid-column: 1/span 3;
   }
@@ -46,10 +46,35 @@
   .virtual__img.desktop {
     display: block;
   }
+
+  .image__gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .image__feature.desktop {
+    display: block;
+  }
+  .image__feature.mobile {
+    display: none;
+  }
+  .image__desc {
+    left: 1.6rem;
+    bottom: 3.2rem;
+    font-size: 3.2rem;
+    max-width: 60%;
+  }
+
+  .btn__container.mobile {
+    display: none;
+    margin-top: 4rem;
+  }
+  .btn__container.desktop {
+    display: block;
+    margin: 0;
+  }
 }
 @media (max-width: 50em) {
   .header {
-    background: url("/images/mobile/image-hero.jpg") no-repeat top center/cover;
+    background: url("../images/mobile/image-hero.jpg") no-repeat top center/cover;
   }
   .header__banner {
     max-width: 100%;
@@ -72,8 +97,9 @@
     text-align: center;
   }
 
-  .virtual {
+  .virtual__reality {
     grid-row: 1/span 1;
+    margin-bottom: 2.4rem;
   }
   .virtual__history {
     grid-row: 2/span 1;
@@ -87,6 +113,45 @@
     display: block;
   }
   .virtual__img.desktop {
+    display: none;
+  }
+
+  .image__gallery {
+    grid-template-columns: 1fr;
+  }
+  .image__feature.desktop {
+    display: none;
+  }
+  .image__feature.mobile {
+    display: block;
+  }
+  .image__desc {
+    left: 1.6rem;
+    bottom: 2.4rem;
+    font-size: 2.4rem;
+    max-width: 40%;
+  }
+
+  .btn__container {
+    display: none;
+  }
+
+  .flex {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .image__heading {
+    width: 100%;
+  }
+
+  .btn__container.mobile {
+    display: block;
+    margin-top: 4rem;
+    text-align: center;
+  }
+  .btn__container.desktop {
     display: none;
   }
 }
@@ -117,6 +182,61 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+.mb--xl {
+  margin-bottom: 4rem;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100%;
+  width: 90%;
+}
+
+.row {
+  display: grid;
+}
+
+.main__heading {
+  color: var(--white);
+  font-size: clamp(3.6rem, 4.5vw, 5.4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: uppercase;
+  max-width: 80%;
+}
+
+.heading__secondary {
+  font-family: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+
+.btn {
+  background-color: var(--white);
+  border: 1px solid var(--primaryText);
+  cursor: pointer;
+  outline: none;
+  padding: 1.6rem 4rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 400ms ease-in-out, color 350ms ease-in-out 50ms;
+}
+.btn:hover {
+  background-color: var(--primaryText);
+  color: var(--white);
+}
+
 .header {
   height: 100vh;
 }
@@ -143,33 +263,8 @@ body {
   text-decoration: none;
 }
 
-.container {
-  margin: 0 auto;
-  height: 100%;
-  width: 90%;
-}
-
-.main__heading {
-  color: var(--white);
-  font-size: clamp(3.6rem, 4.5vw, 5.4rem);
-  font-weight: 300;
-  line-height: 1.2;
-  text-transform: uppercase;
-  max-width: 80%;
-}
-
-.heading__secondary {
-  font-family: inherit;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
 .main {
-  margin: 4rem 0;
-}
-
-.row {
-  display: grid;
+  margin: 8rem 0;
 }
 
 .virtual {
@@ -184,4 +279,51 @@ body {
 .virtual__history > p {
   color: var(--darkGray);
   font-size: 1.6rem;
+}
+
+.image {
+  margin: 8rem 0;
+}
+.image__gallery {
+  display: grid;
+  gap: 2.4rem;
+}
+.image__item {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.image__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, var(--gray), var(--white));
+  mix-blend-mode: multiply;
+}
+.image__item > img {
+  transition: transform 650ms ease-in-out, opacity 550ms ease-in-out 100ms, color 300ms ease-in-out;
+}
+.image__item:hover > img {
+  opacity: 0.35;
+  transform: scale(1.15);
+}
+.image__item:hover figcaption {
+  color: var(--primaryText);
+}
+.image__feature {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.image__desc {
+  position: absolute;
+  color: var(--white);
+  font-family: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+  z-index: 100;
+}
+
+.w-25 {
+  width: 25%;
 }
